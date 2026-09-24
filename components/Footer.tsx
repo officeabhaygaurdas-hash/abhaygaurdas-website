@@ -85,6 +85,16 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/resources" className="hover:text-[#FFD35A] transition-colors">
+                  Wisdom Resources & Guides
+                </Link>
+              </li>
+              <li>
+                <Link href="/volunteer" className="text-[#FDB675] hover:underline flex items-center">
+                  Volunteer for Seva <ArrowUpRight className="w-3.5 h-3.5 ml-1" />
+                </Link>
+              </li>
+              <li>
                 <Link href="/youth" className="hover:text-[#FFD35A] transition-colors">
                   Youth & Udgaar Movement
                 </Link>

@@ -13,7 +13,9 @@ import {
   Users,
   HeartHandshake,
   Landmark,
-  ArrowRight
+  ArrowRight,
+  Heart,
+  BookOpen
 } from 'lucide-react';
 import SearchModal from './SearchModal';
 
@@ -23,6 +25,12 @@ const INITIATIVES_LINKS = [
     desc: 'De-addiction festivals, BASE hostels, DYS courses',
     href: '/youth',
     icon: Users,
+  },
+  {
+    name: 'Volunteer for Seva',
+    desc: 'Join Media, Youth Events, Research & Care wings',
+    href: '/volunteer',
+    icon: Heart,
   },
   {
     name: 'Bhishma Donor Care',
@@ -83,7 +91,7 @@ export default function Navbar() {
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, []);
 
-  const isInitiativeActive = ['/youth', '/bhishma', '/projects'].includes(pathname);
+  const isInitiativeActive = ['/youth', '/bhishma', '/projects', '/volunteer'].includes(pathname);
 
   return (
     <>
@@ -162,6 +170,20 @@ export default function Navbar() {
                   <span className="inline-block w-1.5 h-1.5 rounded-full bg-[#E87516] mr-1.5 align-middle" />
                 )}
                 Lectures
+              </Link>
+
+              <Link
+                href="/resources"
+                className={`relative px-3.5 py-1.5 rounded-full text-xs font-semibold whitespace-nowrap transition-all duration-200 ${
+                  pathname === '/resources'
+                    ? 'bg-gradient-to-b from-[#FFF5E6] to-[#FFEEDB] text-[#C9540B] shadow-sm border border-[#F6B91A]/40'
+                    : 'text-[#473429] hover:text-[#C9540B] hover:bg-[#FFF4E2]/70'
+                }`}
+              >
+                {pathname === '/resources' && (
+                  <span className="inline-block w-1.5 h-1.5 rounded-full bg-[#E87516] mr-1.5 align-middle" />
+                )}
+                Resources
               </Link>
 
               {/* Initiatives Dropdown with Modern Floating Trigger */}
@@ -349,6 +371,15 @@ export default function Navbar() {
                 }`}
               >
                 Discourses & Video Library
+              </Link>
+              <Link
+                href="/resources"
+                onClick={() => setIsOpen(false)}
+                className={`block px-3 py-2 rounded-lg text-sm font-semibold ${
+                  pathname === '/resources' ? 'bg-[#FFF1D6] text-[#C9540B]' : 'text-[#321B0F]'
+                }`}
+              >
+                Wisdom Resources & Guides
               </Link>
             </div>
 
