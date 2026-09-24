@@ -295,7 +295,7 @@ export default function Navbar() {
                   href={SOCIAL_LINKS.instagram}
                   target="_blank"
                   rel="noopener noreferrer"
-                  title="Follow @abhaygaurdas on Instagram"
+                  title="Follow @abhayagaurdas on Instagram"
                   className="w-8 h-8 rounded-full flex items-center justify-center text-[#786253] hover:text-[#E1306C] hover:bg-[#FFF4E2] transition-colors"
                 >
                   <Instagram className="w-3.5 h-3.5" />
@@ -304,7 +304,7 @@ export default function Navbar() {
                   href={SOCIAL_LINKS.facebook}
                   target="_blank"
                   rel="noopener noreferrer"
-                  title="Follow @abhaygaurdas on Facebook"
+                  title="Follow @Abhayagaurdas on Facebook"
                   className="w-8 h-8 rounded-full flex items-center justify-center text-[#786253] hover:text-[#1877F2] hover:bg-[#FFF4E2] transition-colors"
                 >
                   <Facebook className="w-3.5 h-3.5" />
@@ -313,7 +313,7 @@ export default function Navbar() {
                   href={SOCIAL_LINKS.x}
                   target="_blank"
                   rel="noopener noreferrer"
-                  title="Follow @abhaygaurdas on X"
+                  title="Follow @gaurabhaya on X"
                   className="w-8 h-8 rounded-full flex items-center justify-center text-[#786253] hover:text-black hover:bg-[#FFF4E2] transition-colors"
                 >
                   <svg className="w-3 h-3 fill-current" viewBox="0 0 24 24">
@@ -324,7 +324,7 @@ export default function Navbar() {
                   href={SOCIAL_LINKS.youtube}
                   target="_blank"
                   rel="noopener noreferrer"
-                  title="Watch @abhaygaurdas on YouTube"
+                  title="Watch Live Discourses on YouTube"
                   className="w-8 h-8 rounded-full flex items-center justify-center text-[#786253] hover:text-[#FF0000] hover:bg-[#FFF4E2] transition-colors"
                 >
                   <Youtube className="w-3.5 h-3.5" />

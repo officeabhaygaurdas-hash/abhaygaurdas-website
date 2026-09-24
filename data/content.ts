@@ -35,10 +35,10 @@ export interface SocialLinks {
 }
 
 export const SOCIAL_LINKS: SocialLinks = {
-  handle: "@abhaygaurdas",
-  instagram: "https://www.instagram.com/abhaygaurdas/",
-  facebook: "https://www.facebook.com/abhaygaurdas",
-  x: "https://x.com/abhaygaurdas",
+  handle: "@abhayagaurdas",
+  instagram: "https://www.instagram.com/abhayagaurdas/",
+  facebook: "https://www.facebook.com/Abhayagaurdas/",
+  x: "https://x.com/gaurabhaya",
   youtube: "https://www.youtube.com/live/oxF4MKXXY_w?si=VihOJhe_wOjxKAwt",
   email: "office.abhaygaurdas@gmail.com"
 };

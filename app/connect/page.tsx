@@ -274,7 +274,7 @@ export default function ConnectPage() {
                   <p className="text-xs text-[#786253]">Follow for daily discourses & updates</p>
                 </div>
                 <span className="px-3 py-1 rounded-full bg-[#FFEDD5] text-[#C2410C] font-mono text-xs font-bold">
-                  @abhaygaurdas
+                  @abhayagaurdas
                 </span>
               </div>
 
@@ -290,7 +290,7 @@ export default function ConnectPage() {
                   </div>
                   <div>
                     <p className="text-xs font-bold text-[#231209] group-hover:text-[#DD2A7B] transition-colors">Instagram</p>
-                    <p className="text-[10px] text-[#786253]">@abhaygaurdas</p>
+                    <p className="text-[10px] text-[#786253]">@abhayagaurdas</p>
                   </div>
                 </a>
 
@@ -305,7 +305,7 @@ export default function ConnectPage() {
                   </div>
                   <div>
                     <p className="text-xs font-bold text-[#231209] group-hover:text-[#1877F2] transition-colors">Facebook</p>
-                    <p className="text-[10px] text-[#786253]">@abhaygaurdas</p>
+                    <p className="text-[10px] text-[#786253]">@Abhayagaurdas</p>
                   </div>
                 </a>
 
@@ -322,7 +322,7 @@ export default function ConnectPage() {
                   </div>
                   <div>
                     <p className="text-xs font-bold text-[#231209] group-hover:text-black transition-colors">X (Twitter)</p>
-                    <p className="text-[10px] text-[#786253]">@abhaygaurdas</p>
+                    <p className="text-[10px] text-[#786253]">@gaurabhaya</p>
                   </div>
                 </a>
 

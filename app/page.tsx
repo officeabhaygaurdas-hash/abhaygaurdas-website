@@ -211,7 +211,7 @@ export default function HomePage() {
             <div className="flex items-center space-x-2 text-[#786253]">
               <span className="w-2 h-2 rounded-full bg-[#E87516] animate-pulse" />
               <span className="font-semibold text-[#231209]">Official Channels:</span>
-              <span className="font-mono text-[#C9540B] font-bold">@abhaygaurdas</span>
+              <span className="font-mono text-[#C9540B] font-bold">@abhayagaurdas</span>
             </div>
 
             <div className="flex flex-wrap items-center gap-2">

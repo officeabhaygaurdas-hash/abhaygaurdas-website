@@ -66,10 +66,10 @@ export default function Footer() {
               <span>Gaudiya Vaishnava Sampradaya</span>
             </div>
 
-            {/* Social Media Follow Buttons (@abhaygaurdas) */}
+            {/* Social Media Follow Buttons */}
             <div className="pt-3">
               <p className="text-xs uppercase tracking-wider text-[#FDB675] font-semibold mb-2">
-                Connect on Social Media <span className="text-[#FFD35A] font-bold">(@abhaygaurdas)</span>
+                Connect on Social Media <span className="text-[#FFD35A] font-bold">(@abhayagaurdas)</span>
               </p>
               <div className="flex flex-wrap items-center gap-2">
                 <a
