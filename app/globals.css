@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Manrope:wght@300;400;500;600;700&family=Noto+Serif+Devanagari:wght@400;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 44 60% 98%; /* #FCFAF6 */
+    --foreground: 24 50% 12%; /* #321B0F */
+  }
+
+  body {
+    background-color: #FCFAF6;
+    background-image: 
+      radial-gradient(1200px circle at 50% -5%, rgba(254, 215, 170, 0.25), transparent 70%),
+      radial-gradient(900px circle at 90% 25%, rgba(253, 186, 116, 0.08), transparent 60%),
+      radial-gradient(800px circle at 10% 50%, rgba(246, 185, 26, 0.05), transparent 50%);
+    color: #473429;
+    font-family: 'Manrope', system-ui, -apple-system, sans-serif;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    color: #231209;
+    letter-spacing: -0.015em;
+  }
+
+  .font-devanagari {
+    font-family: 'Noto Serif Devanagari', serif;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #FFF4E2;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #FDB675;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #E87516;
+}
+
+/* Pristine, Pure Devotional Background (Clean, soft, zero pattern noise) */
+.bg-sacred-pattern {
+  background-color: #FFFDF9;
+  background-image: 
+    radial-gradient(ellipse 90% 60% at 50% -15%, rgba(254, 215, 170, 0.35), transparent 70%),
+    radial-gradient(circle at 100% 40%, rgba(255, 237, 213, 0.25), transparent 50%),
+    radial-gradient(circle at 0% 70%, rgba(254, 243, 199, 0.25), transparent 50%);
+}
+
+.text-gold-gradient {
+  background: linear-gradient(135deg, #C9540B 0%, #E87516 50%, #D99B0B 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.card-gold-border {
+  border: 1px solid rgba(246, 185, 26, 0.25);
+  box-shadow: 0 4px 20px -2px rgba(232, 117, 22, 0.05);
+}
+
+.card-gold-border:hover {
+  border-color: rgba(232, 117, 22, 0.4);
+  box-shadow: 0 10px 30px -4px rgba(201, 84, 11, 0.1);
+}
+
+/* Devotional Ambient Animations */
+@keyframes float-slow {
+  0%, 100% {
+    transform: translateY(0px) scale(1);
+  }
+  50% {
+    transform: translateY(-8px) scale(1.015);
+  }
+}
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 0.35;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.75;
+    transform: scale(1.08);
+  }
+}
+
+.animate-float-slow {
+  animation: float-slow 7s ease-in-out infinite;
+}
+
+.animate-spin-slow {
+  animation: spin-slow 120s linear infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 5s ease-in-out infinite;
+}
+
