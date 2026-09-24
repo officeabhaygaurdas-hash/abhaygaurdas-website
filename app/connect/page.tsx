@@ -10,8 +10,12 @@ import {
   CheckCircle2, 
   Sparkles, 
   HeartHandshake, 
-  Calendar 
+  Calendar,
+  Instagram,
+  Facebook,
+  Youtube
 } from 'lucide-react';
+import { SOCIAL_LINKS } from '@/data/content';
 
 export default function ConnectPage() {
   const [formData, setFormData] = useState({
@@ -257,6 +261,85 @@ export default function ConnectPage() {
                 <p className="text-xs text-[#786253] italic leading-relaxed">
                   &ldquo;A spiritual master and his disciples exist to serve society. Whenever a soul approaches with genuine submissiveness, the door of the ashram is always open.&rdquo;
                 </p>
+              </div>
+            </div>
+
+            {/* Official Social Media Channels */}
+            <div className="bg-white rounded-3xl p-7 border border-[#F6B91A]/30 shadow-subtle space-y-4">
+              <div className="flex items-center justify-between">
+                <div>
+                  <h4 className="font-serif text-lg font-bold text-[#231209]">
+                    Official Digital Channels
+                  </h4>
+                  <p className="text-xs text-[#786253]">Follow for daily discourses & updates</p>
+                </div>
+                <span className="px-3 py-1 rounded-full bg-[#FFEDD5] text-[#C2410C] font-mono text-xs font-bold">
+                  @abhaygaurdas
+                </span>
+              </div>
+
+              <div className="grid grid-cols-2 gap-3 pt-1">
+                <a
+                  href={SOCIAL_LINKS.instagram}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center space-x-2.5 p-3 rounded-2xl bg-[#FFF9EF] hover:bg-[#FFF4E2] border border-[#F6B91A]/30 transition-all hover:scale-105 group"
+                >
+                  <div className="w-8 h-8 rounded-xl bg-gradient-to-tr from-[#F58529] via-[#DD2A7B] to-[#8134AF] text-white flex items-center justify-center shadow-xs">
+                    <Instagram className="w-4 h-4" />
+                  </div>
+                  <div>
+                    <p className="text-xs font-bold text-[#231209] group-hover:text-[#DD2A7B] transition-colors">Instagram</p>
+                    <p className="text-[10px] text-[#786253]">@abhaygaurdas</p>
+                  </div>
+                </a>
+
+                <a
+                  href={SOCIAL_LINKS.facebook}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center space-x-2.5 p-3 rounded-2xl bg-[#FFF9EF] hover:bg-[#FFF4E2] border border-[#F6B91A]/30 transition-all hover:scale-105 group"
+                >
+                  <div className="w-8 h-8 rounded-xl bg-[#1877F2] text-white flex items-center justify-center shadow-xs">
+                    <Facebook className="w-4 h-4" />
+                  </div>
+                  <div>
+                    <p className="text-xs font-bold text-[#231209] group-hover:text-[#1877F2] transition-colors">Facebook</p>
+                    <p className="text-[10px] text-[#786253]">@abhaygaurdas</p>
+                  </div>
+                </a>
+
+                <a
+                  href={SOCIAL_LINKS.x}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center space-x-2.5 p-3 rounded-2xl bg-[#FFF9EF] hover:bg-[#FFF4E2] border border-[#F6B91A]/30 transition-all hover:scale-105 group"
+                >
+                  <div className="w-8 h-8 rounded-xl bg-black text-white flex items-center justify-center shadow-xs">
+                    <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
+                      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="text-xs font-bold text-[#231209] group-hover:text-black transition-colors">X (Twitter)</p>
+                    <p className="text-[10px] text-[#786253]">@abhaygaurdas</p>
+                  </div>
+                </a>
+
+                <a
+                  href={SOCIAL_LINKS.youtube}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center space-x-2.5 p-3 rounded-2xl bg-[#FFF9EF] hover:bg-[#FFF4E2] border border-[#F6B91A]/30 transition-all hover:scale-105 group"
+                >
+                  <div className="w-8 h-8 rounded-xl bg-[#FF0000] text-white flex items-center justify-center shadow-xs">
+                    <Youtube className="w-4 h-4" />
+                  </div>
+                  <div>
+                    <p className="text-xs font-bold text-[#231209] group-hover:text-[#FF0000] transition-colors">YouTube</p>
+                    <p className="text-[10px] text-[#786253]">Live Discourses</p>
+                  </div>
+                </a>
               </div>
             </div>
           </div>

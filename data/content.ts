@@ -25,18 +25,38 @@ export interface TeachingItem {
   content: string[];
 }
 
+export interface SocialLinks {
+  handle: string;
+  instagram: string;
+  facebook: string;
+  x: string;
+  youtube: string;
+  email: string;
+}
+
+export const SOCIAL_LINKS: SocialLinks = {
+  handle: "@abhaygaurdas",
+  instagram: "https://www.instagram.com/abhaygaurdas/",
+  facebook: "https://www.facebook.com/abhaygaurdas",
+  x: "https://x.com/abhaygaurdas",
+  youtube: "https://www.youtube.com/live/oxF4MKXXY_w?si=VihOJhe_wOjxKAwt",
+  email: "office.abhaygaurdas@gmail.com"
+};
+
 export interface LectureItem {
   id: string;
   slug?: string;
   title: string;
   series: string;
-  topic: 'Bhagavad Gita' | 'Youth & Focus' | 'Mind Control' | 'Devotional Service' | 'Karma & Destiny';
+  topic: 'Bhagavad Gita' | 'Youth & Focus' | 'Mind Control' | 'Devotional Service' | 'Karma & Destiny' | 'Leadership & Temple Management';
   youtubeId: string;
   duration: string;
   date: string;
   location: string;
   description: string;
   keyTakeaways: string[];
+  thumbnail?: string;
+  videoUrl?: string;
 }
 
 export interface YouthInitiative {
@@ -353,6 +373,25 @@ export const TEACHINGS_DATA: TeachingItem[] = [
 ];
 
 export const LECTURES_DATA: LectureItem[] = [
+  {
+    id: "cfo-journey-talk",
+    slug: "cfo-abhay-gaur-das-interview",
+    title: "ISKCON Delhi के CFO Abhay Gaur Das का प्रेरणादायक सफर | Guru, Bhakti, Leadership & Temple Management",
+    series: "Leadership, Guru & Temple Stewardship",
+    topic: "Leadership & Temple Management",
+    youtubeId: "oxF4MKXXY_w",
+    duration: "1:14:22",
+    date: "2024",
+    location: "Special Live Feature Interview",
+    description: "An intimate and inspiring feature on HG Abhay Gaur Das's transformative journey—from Vrindavan Gurukula to serving as Chief Financial Officer (CFO) of ISKCON Delhi, guiding modern youth, managing sacred institutional finances, and the grace of his spiritual master HH Gopal Krishna Goswami Maharaj.",
+    keyTakeaways: [
+      "The spiritual science of managing temple finances with absolute honesty as Krishna's Lakshmi",
+      "How Gurukula discipline shaped leadership resilience in the corporate & monastic world",
+      "Guru-Bhakti: Living by the instructions of HH Gopal Krishna Goswami Maharaj"
+    ],
+    thumbnail: "/images/featured_youtube_talk.jpg",
+    videoUrl: "https://www.youtube.com/live/oxF4MKXXY_w?si=VihOJhe_wOjxKAwt"
+  },
   {
     id: "1",
     title: "Mastering the Restless Mind: Bhagavad Gita Chapter 6 Demystified",

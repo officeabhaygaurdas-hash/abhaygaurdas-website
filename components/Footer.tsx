@@ -11,8 +11,12 @@ import {
   ExternalLink, 
   ShieldCheck, 
   Sparkles,
-  ArrowUpRight
+  ArrowUpRight,
+  Instagram,
+  Facebook,
+  Youtube
 } from 'lucide-react';
+import { SOCIAL_LINKS } from '@/data/content';
 
 export default function Footer() {
   return (
@@ -60,6 +64,53 @@ export default function Footer() {
               </span>
               <span>•</span>
               <span>Gaudiya Vaishnava Sampradaya</span>
+            </div>
+
+            {/* Social Media Follow Buttons (@abhaygaurdas) */}
+            <div className="pt-3">
+              <p className="text-xs uppercase tracking-wider text-[#FDB675] font-semibold mb-2">
+                Connect on Social Media <span className="text-[#FFD35A] font-bold">(@abhaygaurdas)</span>
+              </p>
+              <div className="flex flex-wrap items-center gap-2">
+                <a
+                  href={SOCIAL_LINKS.instagram}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center space-x-1.5 px-3 py-1.5 rounded-full bg-[#321B0F] hover:bg-[#E1306C] text-xs text-[#E0D4C5] hover:text-white border border-[#472715] transition-all hover:scale-105 group"
+                >
+                  <Instagram className="w-3.5 h-3.5 text-[#E1306C] group-hover:text-white transition-colors" />
+                  <span>Instagram</span>
+                </a>
+                <a
+                  href={SOCIAL_LINKS.facebook}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center space-x-1.5 px-3 py-1.5 rounded-full bg-[#321B0F] hover:bg-[#1877F2] text-xs text-[#E0D4C5] hover:text-white border border-[#472715] transition-all hover:scale-105 group"
+                >
+                  <Facebook className="w-3.5 h-3.5 text-[#1877F2] group-hover:text-white transition-colors" />
+                  <span>Facebook</span>
+                </a>
+                <a
+                  href={SOCIAL_LINKS.x}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center space-x-1.5 px-3 py-1.5 rounded-full bg-[#321B0F] hover:bg-black text-xs text-[#E0D4C5] hover:text-white border border-[#472715] transition-all hover:scale-105 group"
+                >
+                  <svg className="w-3 h-3 fill-current text-white/80 group-hover:text-white transition-colors" viewBox="0 0 24 24">
+                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                  </svg>
+                  <span>X (Twitter)</span>
+                </a>
+                <a
+                  href={SOCIAL_LINKS.youtube}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center space-x-1.5 px-3 py-1.5 rounded-full bg-[#321B0F] hover:bg-[#FF0000] text-xs text-[#E0D4C5] hover:text-white border border-[#472715] transition-all hover:scale-105 group"
+                >
+                  <Youtube className="w-3.5 h-3.5 text-[#FF0000] group-hover:text-white transition-colors" />
+                  <span>YouTube</span>
+                </a>
+              </div>
             </div>
           </div>
 

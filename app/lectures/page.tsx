@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
-import { Video, Play, Search, Clock, Calendar, MapPin, CheckCircle2, X } from 'lucide-react';
+import { Video, Play, Search, Clock, Calendar, MapPin, CheckCircle2, X, Youtube, ExternalLink, Sparkles } from 'lucide-react';
 import { LECTURES_DATA, LectureItem } from '@/data/content';
 
 export default function LecturesPage() {
@@ -10,7 +10,9 @@ export default function LecturesPage() {
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [activeModalLecture, setActiveModalLecture] = useState<LectureItem | null>(null);
 
-  const topics = ['All', 'Mind Control', 'Youth & Focus', 'Bhagavad Gita', 'Devotional Service'];
+  const topics = ['All', 'Leadership & Temple Management', 'Mind Control', 'Youth & Focus', 'Bhagavad Gita', 'Devotional Service'];
+
+  const featuredLecture = LECTURES_DATA[0];
 
   const filteredLectures = LECTURES_DATA.filter((lec) => {
     const matchesTopic = selectedTopic === 'All' || lec.topic === selectedTopic;
@@ -38,6 +40,76 @@ export default function LecturesPage() {
           </p>
         </div>
       </section>
+
+      {/* Featured Spotlight: YouTube Live Discourse */}
+      {featuredLecture && (
+        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="rounded-3xl p-6 sm:p-10 bg-gradient-to-br from-[#231209] via-[#321B0F] to-[#1A0C06] border-2 border-[#E87516]/40 shadow-elevated text-white">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+              
+              <div 
+                className="lg:col-span-7 relative aspect-video rounded-2xl overflow-hidden bg-black shadow-devotional group cursor-pointer border border-[#F6B91A]/30"
+                onClick={() => setActiveModalLecture(featuredLecture)}
+              >
+                <Image
+                  src={featuredLecture.thumbnail || "/images/featured_youtube_talk.jpg"}
+                  alt={featuredLecture.title}
+                  fill
+                  className="object-cover opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500"
+                  priority
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
+                
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="w-16 h-16 rounded-full bg-[#E87516] text-white flex items-center justify-center shadow-devotional group-hover:scale-110 transition-transform">
+                    <Play className="w-7 h-7 ml-1 fill-white" />
+                  </div>
+                </div>
+
+                <div className="absolute bottom-3 right-3 px-2.5 py-1 rounded bg-black/80 text-xs font-semibold text-white">
+                  {featuredLecture.duration}
+                </div>
+              </div>
+
+              <div className="lg:col-span-5 space-y-4">
+                <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-[#E87516] text-[11px] font-bold uppercase tracking-wider text-white shadow-xs">
+                  <Sparkles className="w-3.5 h-3.5 text-[#FFD35A]" />
+                  <span>Featured Discourse & Interview</span>
+                </div>
+
+                <h2 className="font-serif text-2xl sm:text-3xl font-bold text-white leading-tight">
+                  {featuredLecture.title}
+                </h2>
+
+                <p className="text-xs sm:text-sm text-[#D7CFC6] leading-relaxed line-clamp-3">
+                  {featuredLecture.description}
+                </p>
+
+                <div className="pt-2 flex flex-wrap items-center gap-3">
+                  <button
+                    onClick={() => setActiveModalLecture(featuredLecture)}
+                    className="px-6 py-3 rounded-full text-xs font-bold text-[#231209] bg-gradient-to-r from-[#FFD35A] to-[#F6B91A] hover:brightness-105 transition-all flex items-center space-x-2 shadow-devotional"
+                  >
+                    <Play className="w-4 h-4 fill-current" />
+                    <span>Watch Full Discourse</span>
+                  </button>
+
+                  <a
+                    href={featuredLecture.videoUrl || "https://www.youtube.com/live/oxF4MKXXY_w?si=VihOJhe_wOjxKAwt"}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-5 py-3 rounded-full text-xs font-bold text-white bg-[#FF0000] hover:bg-[#CC0000] transition-colors flex items-center space-x-2 shadow-sm"
+                  >
+                    <Youtube className="w-4 h-4" />
+                    <span>Open on YouTube</span>
+                  </a>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Filter and Search Bar */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
@@ -86,10 +158,10 @@ export default function LecturesPage() {
                   onClick={() => setActiveModalLecture(lec)}
                 >
                   <Image
-                    src="/images/1000170724.jpeg"
+                    src={lec.thumbnail || "/images/1000170724.jpeg"}
                     alt={lec.title}
                     fill
-                    className="object-cover opacity-70 group-hover:opacity-90 group-hover:scale-105 transition-all duration-500"
+                    className="object-cover opacity-75 group-hover:opacity-95 group-hover:scale-105 transition-all duration-500"
                   />
                   <div className="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors" />
                   

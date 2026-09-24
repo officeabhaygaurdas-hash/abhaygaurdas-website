@@ -27,7 +27,10 @@ import {
   Check,
   Download,
   Share2,
-  TrendingUp
+  TrendingUp,
+  Instagram,
+  Facebook,
+  Youtube
 } from 'lucide-react';
 import { 
   BIOGRAPHY_DATA, 
@@ -36,11 +39,13 @@ import {
   LECTURES_DATA, 
   GALLERY_DATA, 
   UPCOMING_EVENTS, 
-  YOUTH_INITIATIVES 
+  YOUTH_INITIATIVES,
+  SOCIAL_LINKS 
 } from '@/data/content';
 
 export default function HomePage() {
   const [selectedLecture, setSelectedLecture] = useState(LECTURES_DATA[0]);
+  const [isPlayingVideo, setIsPlayingVideo] = useState(false);
   const [copiedQuoteId, setCopiedQuoteId] = useState<string | null>(null);
 
   const handleCopyQuote = (text: string, id: string) => {
@@ -199,6 +204,56 @@ export default function HomePage() {
               </p>
             </div>
 
+          </div>
+
+          {/* Social Channels Strip (@abhaygaurdas) */}
+          <div className="mt-6 pt-5 border-t border-[#F2ECE4] flex flex-col sm:flex-row items-center justify-between gap-3 text-xs">
+            <div className="flex items-center space-x-2 text-[#786253]">
+              <span className="w-2 h-2 rounded-full bg-[#E87516] animate-pulse" />
+              <span className="font-semibold text-[#231209]">Official Channels:</span>
+              <span className="font-mono text-[#C9540B] font-bold">@abhaygaurdas</span>
+            </div>
+
+            <div className="flex flex-wrap items-center gap-2">
+              <a
+                href={SOCIAL_LINKS.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center space-x-1.5 px-3 py-1.5 rounded-full bg-[#FFF4E2] hover:bg-[#E1306C] text-[#473429] hover:text-white border border-[#F6B91A]/30 transition-all font-semibold hover:scale-105 group"
+              >
+                <Instagram className="w-3.5 h-3.5 text-[#E1306C] group-hover:text-white transition-colors" />
+                <span>Instagram</span>
+              </a>
+              <a
+                href={SOCIAL_LINKS.facebook}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center space-x-1.5 px-3 py-1.5 rounded-full bg-[#FFF4E2] hover:bg-[#1877F2] text-[#473429] hover:text-white border border-[#F6B91A]/30 transition-all font-semibold hover:scale-105 group"
+              >
+                <Facebook className="w-3.5 h-3.5 text-[#1877F2] group-hover:text-white transition-colors" />
+                <span>Facebook</span>
+              </a>
+              <a
+                href={SOCIAL_LINKS.x}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center space-x-1.5 px-3 py-1.5 rounded-full bg-[#FFF4E2] hover:bg-black text-[#473429] hover:text-white border border-[#F6B91A]/30 transition-all font-semibold hover:scale-105 group"
+              >
+                <svg className="w-3 h-3 fill-current text-black group-hover:text-white transition-colors" viewBox="0 0 24 24">
+                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                </svg>
+                <span>X (Twitter)</span>
+              </a>
+              <a
+                href={SOCIAL_LINKS.youtube}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center space-x-1.5 px-3 py-1.5 rounded-full bg-[#FFF4E2] hover:bg-[#FF0000] text-[#473429] hover:text-white border border-[#F6B91A]/30 transition-all font-semibold hover:scale-105 group"
+              >
+                <Youtube className="w-3.5 h-3.5 text-[#FF0000] group-hover:text-white transition-colors" />
+                <span>YouTube Talk</span>
+              </a>
+            </div>
           </div>
         </div>
       </section>
@@ -755,33 +810,68 @@ export default function HomePage() {
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-            {/* Active Video Player Mockup */}
-            <div className="lg:col-span-7 bg-[#231209] rounded-2xl overflow-hidden shadow-elevated p-1">
-              <div className="relative aspect-video rounded-xl overflow-hidden bg-black flex items-center justify-center group">
-                <Image
-                  src="/images/1000170724.jpeg"
-                  alt={selectedLecture.title}
-                  fill
-                  className="object-cover opacity-60 group-hover:opacity-75 transition-opacity"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
-                
-                {/* Play Button Icon */}
-                <div className="relative z-10 w-16 h-16 rounded-full bg-[#E87516] flex items-center justify-center text-white shadow-devotional group-hover:scale-110 transition-transform">
-                  <Play className="w-7 h-7 ml-1 fill-white" />
+            {/* Active Video Player Mockup with Interactive YouTube Embed */}
+            <div className="lg:col-span-7 bg-[#231209] rounded-2xl overflow-hidden shadow-elevated p-1 border border-[#F6B91A]/30">
+              {isPlayingVideo ? (
+                <div className="relative aspect-video rounded-xl overflow-hidden bg-black">
+                  <iframe
+                    src={`https://www.youtube-nocookie.com/embed/${selectedLecture.youtubeId}?autoplay=1`}
+                    title={selectedLecture.title}
+                    className="w-full h-full border-0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  />
                 </div>
+              ) : (
+                <div 
+                  className="relative aspect-video rounded-xl overflow-hidden bg-black flex items-center justify-center group cursor-pointer"
+                  onClick={() => setIsPlayingVideo(true)}
+                >
+                  <Image
+                    src={selectedLecture.thumbnail || "/images/featured_youtube_talk.jpg"}
+                    alt={selectedLecture.title}
+                    fill
+                    className="object-cover opacity-85 group-hover:opacity-95 group-hover:scale-105 transition-all duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent" />
+                  
+                  {/* Play Button Icon */}
+                  <div className="relative z-10 w-16 h-16 rounded-full bg-[#E87516] flex items-center justify-center text-white shadow-devotional group-hover:scale-110 transition-transform">
+                    <Play className="w-7 h-7 ml-1 fill-white" />
+                  </div>
 
-                <div className="absolute bottom-4 left-4 right-4 text-white z-10">
-                  <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-[#E87516]">
-                    {selectedLecture.topic}
-                  </span>
-                  <h3 className="font-serif text-lg sm:text-xl font-bold mt-1 text-white">
-                    {selectedLecture.title}
-                  </h3>
-                  <p className="text-xs text-[#BEACA0] mt-0.5">
-                    {selectedLecture.location} • {selectedLecture.duration}
-                  </p>
+                  <div className="absolute bottom-4 left-4 right-4 text-white z-10">
+                    <span className="text-[10px] font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-[#E87516]">
+                      {selectedLecture.topic}
+                    </span>
+                    <h3 className="font-serif text-lg sm:text-xl font-bold mt-1 text-white line-clamp-2">
+                      {selectedLecture.title}
+                    </h3>
+                    <div className="flex items-center justify-between text-xs text-[#BEACA0] mt-1">
+                      <span>{selectedLecture.location} • {selectedLecture.duration}</span>
+                      <span className="text-[#FFD35A] font-semibold flex items-center">
+                        Click to Play Video ▶
+                      </span>
+                    </div>
+                  </div>
                 </div>
+              )}
+
+              {/* YouTube Channel Banner */}
+              <div className="p-3 bg-[#1A0C06] flex flex-wrap items-center justify-between gap-2 text-xs text-[#BEACA0]">
+                <span className="flex items-center text-[#FFD35A] font-medium">
+                  <Youtube className="w-4 h-4 mr-1.5 text-[#FF0000]" />
+                  Official Discourse & Interview
+                </span>
+                <a
+                  href={selectedLecture.videoUrl || `https://www.youtube.com/watch?v=${selectedLecture.youtubeId}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center space-x-1.5 px-3 py-1 rounded-full bg-white/10 hover:bg-[#FF0000] text-white transition-colors font-semibold"
+                >
+                  <Youtube className="w-3.5 h-3.5" />
+                  <span>Watch on YouTube</span>
+                </a>
               </div>
             </div>
 
@@ -796,7 +886,10 @@ export default function HomePage() {
                 return (
                   <button
                     key={lec.id}
-                    onClick={() => setSelectedLecture(lec)}
+                    onClick={() => {
+                      setSelectedLecture(lec);
+                      setIsPlayingVideo(false);
+                    }}
                     className={`w-full text-left p-4 rounded-xl border transition-all duration-200 flex items-start space-x-3 ${
                       isSelected
                         ? 'bg-white border-[#E87516] shadow-devotional'
